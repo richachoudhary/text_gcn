@@ -76,7 +76,7 @@ test_ids = []
 for test_name in doc_test_list:
     test_id = doc_name_list.index(test_name)
     test_ids.append(test_id)
-print(test_ids)
+print("test_ids: ",test_ids)
 random.shuffle(test_ids)
 
 test_ids_str = '\n'.join(str(index) for index in test_ids)
@@ -85,8 +85,8 @@ f.write(test_ids_str)
 f.close()
 
 ids = train_ids + test_ids
-print(ids)
-print(len(ids))
+print("ids: ",ids)
+print("len(ids): ",len(ids))
 
 shuffle_doc_name_list = []
 shuffle_doc_words_list = []
@@ -268,7 +268,7 @@ for i in range(real_train_size):
     one_hot[label_index] = 1
     y.append(one_hot)
 y = np.array(y)
-print(y)
+print("y: ",y)
 
 # tx: feature vectors of test docs, no initial features
 test_size = len(test_ids)
@@ -306,7 +306,7 @@ for i in range(test_size):
     one_hot[label_index] = 1
     ty.append(one_hot)
 ty = np.array(ty)
-print(ty)
+print("ty: ",ty)
 
 # allx: the the feature vectors of both labeled and unlabeled training instances
 # (a superset of x)
@@ -370,7 +370,7 @@ for i in range(vocab_size):
 
 ally = np.array(ally)
 
-print(x.shape, y.shape, tx.shape, ty.shape, allx.shape, ally.shape)
+print("shapes: ",x.shape, y.shape, tx.shape, ty.shape, allx.shape, ally.shape)
 
 '''
 Doc word heterogeneous graph
