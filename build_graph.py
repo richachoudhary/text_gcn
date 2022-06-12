@@ -503,6 +503,9 @@ node_size = train_size + vocab_size + test_size
 adj = sp.csr_matrix(
     (weight, (row, col)), shape=(node_size, node_size))
 
+print("ally: ", ally)
+print("adj: ", adj)
+
 # dump objects
 f = open("data/ind.{}.x".format(dataset), 'wb')
 pkl.dump(x, f)
